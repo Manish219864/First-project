@@ -1,0 +1,67 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* The main container for the whole page */
+div#root > div {  /* assuming React mounts inside #root */
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f6fa;
+}
+
+/* Navbars */
+.top-nav, .secondary-nav {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Main content fills remaining space */
+main#content {
+  flex-grow: 1;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Tab buttons */
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: #eee;
+  text-align: center;
+  user-select: none;
+}
+
+.tab-button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Tab content */
+.tab {
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tab.active {
+  display: block;
+  padding: 15px;
+  border: 1px solid #ddd;
+}

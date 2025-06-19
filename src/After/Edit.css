@@ -1,0 +1,279 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Top Navbar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon {
+    margin-right: 10px; /* Adjust position */
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Secondary Navbar */
+.secondary-nav ul {
+    display: flex;
+    background: #f8f8f8;
+    padding: 10px;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.secondary-nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.orders-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orders-item:hover .orders-menu {
+    display: block;
+}
+
+.orders-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.orders-menu a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.returns-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.returns-item:hover .returns-menu {
+    display: block;
+}
+
+.returns-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.returns-menu a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin: 20px 0;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tab-button.active {
+    background: #007bff;
+    color: #fff;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+/* KYC Notification */
+.kyc-notification {
+    background-color: #ffeb99;
+    color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+.wallet-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-item:hover .wallet-menu {
+    display: block;
+}
+
+.wallet-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.wallet-menu a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Search Box */
+.search-container {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.search-box {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+}
+
+/* Contact Us Link */
+.contact-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+.secondary-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.secondary-nav ul li:first-child a {
+    font-size: 20px; /* Slightly larger for the home icon */
+    font-weight: bold;
+}
+
+/* Secondary Navbar */
+.secondary-nav ul {
+    display: flex;
+    background: #f8f8f8;
+    padding: 10px;
+    list-style: none;
+    justify-content: space-around;
+    position: relative;
+}
+
+.secondary-nav ul li {
+    position: relative; /* Ensure dropdown positioning works */
+}
+
+.secondary-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.secondary-nav ul li:first-child a {
+    font-size: 20px; /* Slightly larger for the home icon */
+    font-weight: bold;
+}
+
+/* Dropdown Menu */
+.has-dropdown .dropdown {
+    display: none; /* Initially hide dropdown */
+    position: absolute;
+    top: 100%; /* Position below the parent */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.has-dropdown:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.has-dropdown .dropdown a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.has-dropdown .dropdown a:hover {
+    background-color: #007bff;
+    color: #fff;
+}

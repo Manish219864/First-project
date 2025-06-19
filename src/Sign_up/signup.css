@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+ height: 100%;
+ display: flex;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+/* LEFT SIDE */
+.signup-left {
+  flex: 1;
+  background-color: #e8f4ff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.signup-left h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.signup-left p {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.signup-left img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* RIGHT SIDE */
+.signup-right {
+  flex: 1;
+  background-color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-toggle {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.user-toggle label {
+  font-weight: bold;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.google-btn img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.divider {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #888;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.phone-row {
+  display: flex;
+  gap: 10px;
+}
+
+.recaptcha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-redirect {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signup-left,
+.signup-right {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* ✅ Mobile View */
+@media screen and (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    
+  }
+
+ 
+}

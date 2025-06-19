@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Ensure html and body take up full height and prevent horizontal scrolling */
+html, body {
+    height: 100%;      /* Full height */
+    margin: 0;         /* Remove default margin */
+    padding: 0;        /* Remove default padding */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Ensure the body content is scrollable */
+main {
+    min-height: 100%;   /* Ensure it takes up full available height */
+    overflow-y: auto;   /* Enable vertical scrolling */
+    padding: 20px;      /* Optional: Add spacing for readability */
+}
+
+/* Add top padding to body to avoid content being hidden behind the fixed navbar */
+body {
+    padding-top: 70px;  /* Adjust this value based on your navbar height */
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    position: relative;
+    z-index: 1000;
+}
+
+.left-space, .right-space {
+    width: 50px;
+}
+
+.logo img {
+    height: 45px;
+    
+}
+.logo:hover {
+    cursor:pointer;
+}
+.middle-space {
+    flex: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    z-index: 10;
+    border: 1px solid #ddd;
+    padding: 10px;
+    min-width: 200px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.features-column {
+    float: left;
+    width: 50%;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.vertical {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.auth-buttons {
+    margin-left: 30px;
+}
+
+.auth-buttons .signup-btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.auth-buttons .signup-btn:hover {
+    background-color: #0056b3;
+}
+
+.auth-buttons .login-btn {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* Add sticky behavior to the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2px gray; /* Optional: Adds shadow for better visibility */
+}
+
+/* Image section below the Sign Up button */
+.image-section {
+    margin-top: 0;
+    text-align: right;
+}
+
+.image-section img {
+    max-width: 600px;
+       height: 550px;
+    margin-bottom: 20px; /* Optional: Adds spacing between the image and next content */
+}
+
+/* Style for Sign Up and Log In buttons */
+.auth-buttons .login-btn,
+.auth-buttons .signup-btn {
+    padding: 10px 20px;  /* Increased padding for a larger button */
+    font-size: 16px;     /* Increase font size */
+    border-radius: 5px; /* Round borders */
+    cursor: pointer;    /* Make cursor pointer */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Login button */
+.auth-buttons .login-btn {
+    background-color: transparent;
+    border: 2px solid grey;
+    margin-right: 10px
+}
+
+.auth-buttons .login-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Sign Up button */
+.auth-buttons .signup-btn {
+    background-color:#0056b3;
+    color: white;
+    border: none;
+}
+
+/* Default - hide hamburger menu on large screens */
+.hamburger-menu {
+    display: none; /* Hide on full screen */
+}
+
+/* When screen is small (max-width: 768px), show the hamburger menu */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+        position: absolute; /* Fix position */
+        right: 50px; /* Place it at the right corner */
+        top: 30px; /* Adjust vertical position as needed */
+        cursor: pointer; /* Make it clickable */
+        color: royalblue
+    }
+
+    .nav-links {
+        display: none; /* Hide the navigation links */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show navigation links when active */
+        flex-direction: column; /* Stack the nav links vertically */
+        position: absolute;
+        top: 60px; /* Adjust vertical position */
+        right: 0;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        border-radius: 5px;
+    }
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.auth-buttons a {
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allows padding and button-like behavior */
+    padding: 10px 20px; /* Add padding for button appearance */
+    font-size: 16px; /* Adjust text size */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    text-align: center; /* Center text */
+}
+
+/* Style for Log In button */
+.auth-buttons .login-btn {
+    background-color: transparent;
+    border: 2px solid grey;
+    color: black;
+    margin-right: 10px;
+}
+
+.auth-buttons .login-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style for Sign Up button */
+.auth-buttons .signup-btn {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    margin-right: 20px;
+}
+
+.auth-buttons .signup-btn:hover {
+    background-color: #0041a3;
+}
+
+/* Navbar stays fixed at the top */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000;
+    box-shadow: none; /* Optional: Remove shadow */
+    border-bottom: none; /* Ensure no border at the bottom */
+}
+
+/* Ensure page content starts below the fixed navbar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.image-section {
+    margin-top: 100px; /* Adjust this to the height of the navbar */
+    text-align: right;
+}
+
+.image-section img {
+    max-width: 600px;
+    height: 550px;
+    margin-bottom: 20px;
+}
+
+/* Make content scrollable */
+html, body {
+    height: 100%; /* Ensure body occupies full height */
+}
+
+main {
+    min-height: 100%; /* Ensure main content fills remaining space */
+    padding: 20px; /* Optional: Add spacing for readability */
+}
+
