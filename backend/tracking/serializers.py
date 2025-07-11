@@ -1,9 +1,17 @@
-# backend/tracking/serializers.py
-
 from rest_framework import serializers
-from .models import Shipment
+from .models import Shipment, ReturnRequest, Wallet
 
 class ShipmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shipment
-        fields = '__all__'  # or list specific fields like ['id', 'status', 'tracking_number']
+        fields = '__all__'
+
+class ReturnRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ReturnRequest
+        fields = '__all__'
+
+class WalletSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Wallet
+        fields = '__all__'

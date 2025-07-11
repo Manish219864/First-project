@@ -1,0 +1,66 @@
+{
+  "new_orders": [
+    {
+      "order_id": "ORD001",
+      "tracking_id": "TRK001",
+      "status": "New",
+      "current_location": "Warehouse A",
+      "last_updated": "2025-06-21T10:00:00"
+    },
+    {
+      "order_id": "ORD002",
+      "tracking_id": "TRK002",
+      "status": "New",
+      "current_location": "Warehouse B",
+      "last_updated": "2025-06-21T11:00:00"
+    }
+  ],
+  "process_orders": [
+    {
+      "order_id": "ORD003",
+      "tracking_id": "TRK003",
+      "status": "Processing",
+      "current_location": "Sorting Center",
+      "last_updated": "2025-06-21T12:00:00"
+    }
+  ],
+  "track_orders": [
+    {
+      "order_id": "ORD004",
+      "tracking_id": "TRK004",
+      "status": "Shipped",
+      "current_location": "Mumbai Hub",
+      "last_updated": "2025-06-21T13:00:00"
+    }
+  ],
+  "all_orders": [
+    {
+      "order_id": "ORD001",
+      "tracking_id": "TRK001",
+      "status": "New",
+      "current_location": "Warehouse A",
+      "last_updated": "2025-06-21T10:00:00"
+    },
+    {
+      "order_id": "ORD002",
+      "tracking_id": "TRK002",
+      "status": "New",
+      "current_location": "Warehouse B",
+      "last_updated": "2025-06-21T11:00:00"
+    },
+    {
+      "order_id": "ORD003",
+      "tracking_id": "TRK003",
+      "status": "Processing",
+      "current_location": "Sorting Center",
+      "last_updated": "2025-06-21T12:00:00"
+    },
+    {
+      "order_id": "ORD004",
+      "tracking_id": "TRK004",
+      "status": "Shipped",
+      "current_location": "Mumbai Hub",
+      "last_updated": "2025-06-21T13:00:00"
+    }
+  ]
+}

@@ -46,9 +46,12 @@ INSTALLED_APPS = [
 
 # custom input
 REST_FRAMEWORK={
-    'DEFAULT_AUTHENTICATION_CLASSES':(
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ],
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
 
 MIDDLEWARE = [
@@ -64,7 +67,7 @@ MIDDLEWARE = [
 
 #custom added for corsheaders
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3001",
+    "http://localhost:3000",
 ]
 
 #custom added for backend
@@ -151,3 +154,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # custom added for backend
 CORS_ALLOW_ALL_ORIGINS = True
+
+#custom 3 
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')

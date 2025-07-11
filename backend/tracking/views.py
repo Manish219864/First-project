@@ -1,34 +1,39 @@
-from django.shortcuts import render
+# views.py
 
-# Create your views here.
-#custom created for shipment tracking backend
-
-
-from rest_framework.views import APIView
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from rest_framework import status
-from .models import Shipment
-from .serializers import ShipmentSerializer
-#custom added for backend
 from rest_framework.permissions import IsAuthenticated
+from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
 
-class TrackShipmentAPIView(APIView):
+# Simulated in-memory DB
+mock_orders = []
 
-    #custom phase 4
-    permission_classes = [IsAuthenticated]  # 👈 Add this line
+@csrf_exempt  #custom 3
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def mock_orders_view(request):
+    print(" mock_orders_view hit:", request.method)
+    if request.method == 'POST':
+        new_order = {
+            "order_id": request.data.get("order_id"),
+            "tracking_id": request.data.get("tracking_id"),
+            "status": request.data.get("status"),
+            "current_location": request.data.get("current_location"),
+            "last_updated": timezone.now()
+        }
+        mock_orders.append(new_order)
+        return Response({"message": "Order added", "order": new_order}, status=201)
 
-    def get(self, request, tracking_id):
-        try:
-            shipment = Shipment.objects.get(tracking_id=tracking_id)
-            serializer = ShipmentSerializer(shipment)
-            return Response(serializer.data)
-        except Shipment.DoesNotExist:
-            return Response({"error": "Tracking ID not found"}, status=status.HTTP_404_NOT_FOUND)
-        
+    elif request.method == 'GET':
+        new_orders = [o for o in mock_orders if o["status"] == "Shipped"]
+        process_orders = [o for o in mock_orders if o["status"] == "Out for Delivery"]
+        track_orders = [o for o in mock_orders if o["status"] == "Delivered"]
+        all_orders = mock_orders
 
-    def post(self, request):
-        serializer = ShipmentSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response({
+            "new_orders": new_orders,
+            "process_orders": process_orders,
+            "track_orders": track_orders,
+            "all_orders": all_orders
+        })

@@ -1,13 +1,6 @@
-#custom file created for shiipment tracking backend
-
 from django.urls import path
-from .views import TrackShipmentAPIView
+from .views import mock_orders_view  # ✅ only this is needed
 
 urlpatterns = [
-    # POST request to create a shipment
-    path('', TrackShipmentAPIView.as_view(), name='create-shipment'),
-
-    # GET request to fetch shipment by tracking ID
-    path('<str:tracking_id>/', TrackShipmentAPIView.as_view(), name='track-shipment'),
+    path('mock-orders/', mock_orders_view),  # ✅ single GET+POST endpoint
 ]
-
